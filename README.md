@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+## Install
+on your `pubspec.yaml`
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter

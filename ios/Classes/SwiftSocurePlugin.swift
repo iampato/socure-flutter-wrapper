@@ -22,8 +22,16 @@ public class SwiftSocurePlugin: NSObject, FlutterPlugin {
     let arguments = call.arguments as? Dictionary<String, Any>
     switch call.method {
         case "launchSocure":
-           var flowConfig: [String : Any]? = arguments["flow"]
+//            var flowConfig: [String : Any]? = arguments["flow"]
            let socureSdkKey: String = arguments["sdkKey"]!
+           var flowConfig: [String: Any]?
+                 do {
+                     flowConfig = try arguments["flow"]?.convertToDictionary()
+                 } catch {
+                     let errorDict = ["errorMessage": "Invalid config data", "statusCode": "7109"]
+                     result([errorDict])
+                     return
+                 }
            objDocVHelper.launch(socureSdkKey, presentingViewController: controller, config: flowConfig, completionBlock: { result in
               switch result {
               case .success(let scan):
@@ -45,4 +53,17 @@ public class SwiftSocurePlugin: NSObject, FlutterPlugin {
             return
     }
   }
+}
+
+extension String {
+    func convertToDictionary() throws -> [String: Any]? {
+        if let data = self.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                throw error
+            }
+        }
+        return nil
+    }
 }
