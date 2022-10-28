@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - socure (0.0.1):
+    - Flutter
+    - SocureDocV
+  - SocureDocV (3.0.2)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - socure (from `.symlinks/plugins/socure/ios`)
+
+SPEC REPOS:
+  trunk:
+    - SocureDocV
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  socure:
+    :path: ".symlinks/plugins/socure/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  socure: 1f9944c0673bed42190ae401976c5a6a01275084
+  SocureDocV: bb618f9a2bd35cb0c1ba11ddefa4217a3f77c622
+
+PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
+
+COCOAPODS: 1.11.3
