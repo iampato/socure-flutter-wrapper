@@ -4,7 +4,11 @@ A new Flutter project.
 
 ## Install
 on your `pubspec.yaml`
-
+```
+socure:
+      git:
+        url: https://github.com/iampato/socure-flutter-wrapper.git
+```
 
 ## Getting Started
 
