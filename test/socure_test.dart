@@ -26,6 +26,6 @@ void main() {
     MockSocurePlatform fakePlatform = MockSocurePlatform();
     SocurePlatform.instance = fakePlatform;
 
-    expect(await socurePlugin.launchSocure(sdkKey: ""), {"docUUID": "sample"});
+    expect(await socurePlugin.launchSocure(sdkKey: ""), null);
   });
 }

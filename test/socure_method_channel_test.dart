@@ -10,7 +10,7 @@ void main() {
 
   setUp(() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return {"docUUID": "sample"};
+      return null;
     });
   });
 
@@ -19,6 +19,6 @@ void main() {
   });
 
   test('launchSocure', () async {
-    expect(await platform.launchSocure(sdkKey: ""), {"docUUID": "sample"});
+    expect(await platform.launchSocure(sdkKey: ""), null);
   });
 }

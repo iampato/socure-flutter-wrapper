@@ -1,4 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:socure/models/socure_error_result.dart';
+import 'package:socure/models/socure_success_result.dart';
 
 import 'socure_method_channel.dart';
 
@@ -23,7 +25,12 @@ abstract class SocurePlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<Map<String, dynamic>?> launchSocure({required String sdkKey, String? flow}) {
+  Future<void> launchSocure({
+    required String sdkKey,
+    String? flow,
+    Function(SocureSuccessResult)? onSuccess,
+    Function(SocureErrorResult)? onError,
+  }) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }
