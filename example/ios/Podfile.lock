@@ -2,7 +2,7 @@ PODS:
   - Flutter (1.0.0)
   - socure (0.0.1):
     - Flutter
-    - SocureDocV
+    - SocureDocV (= 3.0.2)
   - SocureDocV (3.0.2)
 
 DEPENDENCIES:
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  socure: 1f9944c0673bed42190ae401976c5a6a01275084
+  socure: e094136e996776388d7f0f37053b77aefa04bc8c
   SocureDocV: bb618f9a2bd35cb0c1ba11ddefa4217a3f77c622
 
 PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
