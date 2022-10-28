@@ -43,9 +43,6 @@ class SocurePlugin : FlutterPlugin, MethodCallHandler, ActivityAware, PluginRegi
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
         when (call.method) {
-            "getPlatformVersion" -> {
-                result.success("Android ${android.os.Build.VERSION.RELEASE}")
-            }
             "launchSocure" -> {
                 try {
                     val socureSdkKey: String = call.argument("sdkKey")!!

@@ -58,9 +58,6 @@ public class SwiftSocurePlugin: NSObject, FlutterPlugin {
                     completionBlock: resultHandler
             )
             return
-        case "getPlatformVersion":
-            result("iOS " + UIDevice.current.systemVersion)
-            return
         default:
             result(FlutterMethodNotImplemented)
             return

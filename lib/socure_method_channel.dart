@@ -12,13 +12,6 @@ class MethodChannelSocure extends SocurePlatform {
   final methodChannel = const MethodChannel('socure');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version =
-        await methodChannel.invokeMethod<String>('getPlatformVersion');
-    return version;
-  }
-
-  @override
   Future<Map<String, dynamic>?> launchSocure({required String sdkKey, String? flow}) async {
    final result = await methodChannel.invokeMethod<String>(
       'launchSocure',

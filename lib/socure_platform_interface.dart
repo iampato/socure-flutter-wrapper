@@ -23,10 +23,6 @@ abstract class SocurePlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
-
   Future<Map<String, dynamic>?> launchSocure({required String sdkKey, String? flow}) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
