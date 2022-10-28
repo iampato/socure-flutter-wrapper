@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -18,13 +20,18 @@ class MethodChannelSocure extends SocurePlatform {
 
   @override
   Future<Map<String, dynamic>?> launchSocure({required String sdkKey, String? flow}) async {
-   final result = await methodChannel.invokeMethod<Map<String, dynamic>>(
+   final result = await methodChannel.invokeMethod<String>(
       'launchSocure',
       <String, dynamic>{
         'sdkKey': sdkKey,
         'flow': flow,
       },
     );
-   return result;
+   // string to json
+   if(result!=null){
+     Map<String, dynamic> json = jsonDecode(result);
+     return json;
+   }
+   return null;
   }
 }

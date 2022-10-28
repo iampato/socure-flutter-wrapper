@@ -58,11 +58,14 @@ class _MyAppState extends State<MyApp> {
           child: Text('Running on: $_platformVersion\n'),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () async{
+          onPressed: () async {
             String key = "c488debf-1017-4423-8e4d-ea35a89337b3";
             final res = await _socurePlugin.launchSocure(
               sdkKey: key,
             );
+            print("#################");
+            print(res);
+            print("#################");
           },
         ),
       ),
