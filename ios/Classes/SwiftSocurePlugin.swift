@@ -22,8 +22,8 @@ public class SwiftSocurePlugin: NSObject, FlutterPlugin {
     let arguments = call.arguments as? Dictionary<String, Any>
     switch call.method {
         case "launchSocure":
-           var flowConfig: [String : Any]? = args["flow"]
-           let socureSdkKey: String = args["sdkKey"]!
+           var flowConfig: [String : Any]? = arguments["flow"]
+           let socureSdkKey: String = arguments["sdkKey"]!
            objDocVHelper.launch(socureSdkKey, presentingViewController: controller, config: flowConfig, completionBlock: { result in
               switch result {
               case .success(let scan):
