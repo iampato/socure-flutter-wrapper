@@ -1,6 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-import 'package:socure/models/socure_error_result.dart';
-import 'package:socure/models/socure_success_result.dart';
+import 'package:socure/utils/callbacks.dart';
 
 import 'socure_method_channel.dart';
 
@@ -27,9 +26,9 @@ abstract class SocurePlatform extends PlatformInterface {
 
   Future<void> launchSocure({
     required String sdkKey,
+    required OnSuccessCallback onSuccess,
+    required OnErrorCallback onError,
     String? flow,
-    Function(SocureSuccessResult)? onSuccess,
-    Function(SocureErrorResult)? onError,
   }) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }

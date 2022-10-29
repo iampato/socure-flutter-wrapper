@@ -20,6 +20,7 @@ on your `pubspec.yaml`
 socure:
       git:
         url: https://github.com/iampato/socure-flutter-wrapper.git
+        ref: develop
 ```
 
 ## Getting Started
@@ -89,6 +90,7 @@ Your app can receive a response callback from the Socure DocV SDK when the flow 
 
 ### `onSuccess` response
 When the consumer successfully completes the flow and the captured images are uploaded, the `onSuccess` callback receives the ScannedData object which contains session information and the extracted data. The table below lists the available `ScannedData` properties.
+Note that all these fields are optional
 
 | Result Field   | Type        | Description                                                                                                                                                                                          |
 |----------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

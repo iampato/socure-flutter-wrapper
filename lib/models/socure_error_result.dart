@@ -25,7 +25,9 @@ class SocureErrorResult {
 
   factory SocureErrorResult.fromJson(Map<String, dynamic> json) =>
       SocureErrorResult(
-        capturedImages: CapturedImages.fromJson(json["capturedImages"]),
+        capturedImages: json["capturedImages"] == null
+            ? null
+            : CapturedImages.fromJson(json["capturedImages"]),
         errorMessage: json["errorMessage"],
         sessionId: json["sessionId"],
         statusCode: json["statusCode"],
@@ -37,6 +39,11 @@ class SocureErrorResult {
         "sessionId": sessionId,
         "statusCode": statusCode,
       };
+
+  @override
+  String toString() {
+    return 'SocureErrorResult(capturedImages: ${capturedImages.toString()}, errorMessage: $errorMessage, sessionId: $sessionId, statusCode: $statusCode)';
+  }
 }
 
 class CapturedImages {
@@ -52,4 +59,7 @@ class CapturedImages {
   Map<String, dynamic> toJson() => {
         "passport": passport,
       };
+
+  @override
+  String toString() => 'CapturedImages(passport: $passport)';
 }

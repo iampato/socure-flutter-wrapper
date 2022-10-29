@@ -29,9 +29,15 @@ class SocureSuccessResult {
       SocureSuccessResult(
         docUuid: json["docUUID"],
         sessionId: json["sessionId"],
-        extractedData: ExtractedData.fromJson(json["extractedData"]),
-        captureData: Capture.fromJson(json["captureData"]),
-        capturedImages: Capture.fromJson(json["capturedImages"]),
+        extractedData: json["extractedData"] == null
+            ? null
+            : ExtractedData.fromJson(json["extractedData"]),
+        captureData: json["captureData"] == null
+            ? null
+            : Capture.fromJson(json["captureData"]),
+        capturedImages: json["capturedImages"] == null
+            ? null
+            : Capture.fromJson(json["capturedImages"]),
       );
 
   Map<String, dynamic> toJson() => {
@@ -41,6 +47,11 @@ class SocureSuccessResult {
         "captureData": captureData?.toJson(),
         "capturedImages": capturedImages?.toJson(),
       };
+
+  @override
+  String toString() {
+    return 'SocureSuccessResult(docUuid: $docUuid, sessionId: $sessionId, extractedData: $extractedData, captureData: $captureData, capturedImages: $capturedImages)';
+  }
 }
 
 class Capture {
@@ -69,6 +80,11 @@ class Capture {
         "passport": passport,
         "selfie": selfie,
       };
+
+  @override
+  String toString() {
+    return 'Capture(licFront: $licFront, licBack: $licBack, passport: $passport, selfie: $selfie)';
+  }
 }
 
 class ExtractedData {
@@ -97,7 +113,9 @@ class ExtractedData {
   factory ExtractedData.fromJson(Map<String, dynamic> json) => ExtractedData(
         address: json["address"],
         issueDate: json["issueDate"],
-        parsedAddress: ParsedAddress.fromJson(json["parsedAddress"]),
+        parsedAddress: json["parsedAddress"] == null
+            ? null
+            : ParsedAddress.fromJson(json["parsedAddress"]),
         dob: json["dob"],
         documentNumber: json["documentNumber"],
         expirationDate: json["expirationDate"],
@@ -117,6 +135,11 @@ class ExtractedData {
         "fullName": fullName,
         "type": type,
       };
+
+  @override
+  String toString() {
+    return 'ExtractedData(address: $address, issueDate: $issueDate, parsedAddress: $parsedAddress, dob: $dob, documentNumber: $documentNumber, expirationDate: $expirationDate, firstName: $firstName, fullName: $fullName, type: $type)';
+  }
 }
 
 class ParsedAddress {
@@ -153,4 +176,9 @@ class ParsedAddress {
         "postalCode": postalCode,
         "state": state,
       };
+
+  @override
+  String toString() {
+    return 'ParsedAddress(city: $city, country: $country, physicalAddress: $physicalAddress, physicalAddress2: $physicalAddress2, postalCode: $postalCode, state: $state)';
+  }
 }

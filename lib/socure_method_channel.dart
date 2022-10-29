@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:socure/models/socure_error_result.dart';
 import 'package:socure/models/socure_success_result.dart';
+import 'package:socure/utils/callbacks.dart';
 
 import 'socure_platform_interface.dart';
 
@@ -16,9 +17,9 @@ class MethodChannelSocure extends SocurePlatform {
   @override
   Future<void> launchSocure({
     required String sdkKey,
+    required OnSuccessCallback onSuccess,
+    required OnErrorCallback onError,
     String? flow,
-    Function(SocureSuccessResult)? onSuccess,
-    Function(SocureErrorResult)? onError,
   }) async {
     final result = await methodChannel.invokeMethod<String>(
       'launchSocure',
@@ -29,22 +30,20 @@ class MethodChannelSocure extends SocurePlatform {
     );
     // string to json
     if (result != null) {
+      // print("####################");
+      // print("##########$result##########");
+      // print("####################");
       Map<String, dynamic> json = jsonDecode(result);
       // if json contains key docUUID then it is success
       if (json.containsKey('docUUID')) {
         // convert json to model
         final socureSuccessResult = SocureSuccessResult.fromJson(json);
         // call success callback
-        if (onSuccess != null) {
-          onSuccess(socureSuccessResult);
-        }
+        onSuccess(socureSuccessResult);
       } else {
         // convert json to model
         final socureErrorResult = SocureErrorResult.fromJson(json);
-        // call error callback
-        if (onError != null) {
-          onError(socureErrorResult);
-        }
+        onError(socureErrorResult);
       }
     }
   }

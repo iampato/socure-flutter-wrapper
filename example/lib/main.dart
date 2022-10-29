@@ -37,13 +37,13 @@ class _MyAppState extends State<MyApp> {
             await _socurePlugin.launchSocure(
               sdkKey: key,
               onSuccess: (successResult) {
-                debugPrint("#################");
-                debugPrint(successResult.toJson().toString());
-                debugPrint("#################");
+                debugPrint("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+                print(successResult.toString());
+                debugPrint("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
               },
               onError: (errorResult) {
                 debugPrint("*****************");
-                debugPrint(errorResult.toJson().toString());
+                print(errorResult.toString());
                 debugPrint("*****************");
               },
             );
