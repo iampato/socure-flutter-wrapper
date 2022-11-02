@@ -1,7 +1,20 @@
+import 'package:socure/utils/callbacks.dart';
+
 import 'socure_platform_interface.dart';
 
 class Socure {
-  Future<Map<String, dynamic>?> launchSocure({required String sdkKey, String? flow}) {
-    return SocurePlatform.instance.launchSocure(sdkKey: sdkKey, flow: flow);
+  // final OnSuccessCallbak
+  Future<void> launchSocure({
+    required String sdkKey,
+    required OnSuccessCallback onSuccess,
+    required OnErrorCallback onError,
+    String? flow,
+  }) {
+    return SocurePlatform.instance.launchSocure(
+      sdkKey: sdkKey,
+      onSuccess: onSuccess,
+      onError: onError,
+      flow: flow,
+    );
   }
 }

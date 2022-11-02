@@ -1,4 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
+import 'package:socure/utils/callbacks.dart';
 
 import 'socure_method_channel.dart';
 
@@ -23,7 +24,12 @@ abstract class SocurePlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<Map<String, dynamic>?> launchSocure({required String sdkKey, String? flow}) {
+  Future<void> launchSocure({
+    required String sdkKey,
+    required OnSuccessCallback onSuccess,
+    required OnErrorCallback onError,
+    String? flow,
+  }) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

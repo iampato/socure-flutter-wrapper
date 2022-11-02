@@ -25,18 +25,19 @@ public class SwiftSocurePlugin: NSObject, FlutterPlugin {
         var resultHandler: ((Result<ScannedData, ScanError>) -> Void) {
             {
                 switch $0 {
-                case .success(let result):
-                    let responseData = result.dictionary.convertToStr()
+                case .success(let data):
+                    let responseData = data.dictionary.convertToStr()
                     result(responseData)
-                    //self.controller.showToast(message: "SUCCESS RESULTS \(result.dictionary)", font: .systemFont(ofSize: 12.0))
+                    break;
+                    // self.controller.showToast(message: "SUCCESS RESULTS \(result.dictionary)", font: .systemFont(ofSize: 12.0))
                 case .failure(let error):
                     let responseError = error.dictionary.convertToStr()
                     result(responseError)
+                    break;
                     // self.controller.showToast(message: "ERROR RESULTS \(responseError)", font: .systemFont(ofSize: 12.0))
                 }
             }
         }
-
         let arguments = call.arguments as! Dictionary<String, Any>
         switch call.method {
         case "launchSocure":

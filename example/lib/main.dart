@@ -33,13 +33,20 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-            String key = "SDK_KEY";
-            final res = await _socurePlugin.launchSocure(
+            String key = "c488debf-1017-4423-8e4d-ea35a89337b3";
+            await _socurePlugin.launchSocure(
               sdkKey: key,
+              onSuccess: (successResult) {
+                debugPrint("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+                print(successResult.toString());
+                debugPrint("%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+              },
+              onError: (errorResult) {
+                debugPrint("*****************");
+                print(errorResult.toString());
+                debugPrint("*****************");
+              },
             );
-            print("#################");
-            print(res);
-            print("#################");
           },
         ),
       ),
