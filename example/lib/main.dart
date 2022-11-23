@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () async {
-            String key = "c488debf-1017-4423-8e4d-ea35a89337b3";
+            String key = "<INSERT YOUR KEY HERE>";
             await _socurePlugin.launchSocure(
               sdkKey: key,
               onSuccess: (successResult) {
