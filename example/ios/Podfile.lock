@@ -2,8 +2,8 @@ PODS:
   - Flutter (1.0.0)
   - socure (0.0.1):
     - Flutter
-    - SocureDocV (= 3.0.2)
-  - SocureDocV (3.0.2)
+    - SocureDocV (= 4.3.0)
+  - SocureDocV (4.3.0)
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/socure/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  socure: e094136e996776388d7f0f37053b77aefa04bc8c
-  SocureDocV: bb618f9a2bd35cb0c1ba11ddefa4217a3f77c622
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  socure: bb12fa59ed1140c5ae2153fb28f39dccf6c95036
+  SocureDocV: 879a3452c062c8495ccd7c0a78a8bb971983f13e
 
 PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.14.3
